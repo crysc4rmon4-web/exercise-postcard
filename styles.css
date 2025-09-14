@@ -1,8 +1,21 @@
+body {
+	background: black;
+}
+
+* {
+	min-height: 10px;
+}
+
 .postcard {
 	background: white;
 	width: 400px;
 	height: 300px;
 	margin: auto;
+	box-sizing: border-box;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .postcard-header {
@@ -15,25 +28,55 @@
 }
 
 .postcard-header h1 {
-	width: 200px;
-	margin: auto;
+	width: 350px;
+	margin: 0px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .postcard-body {
 	display: flex;
+	align-items: flex-start;
+	gap: 10px;
 }
 
-.body-left p:first-child {
-	margin-top: none;
+.postcard-body p:first-of-type {
+	margin-top: 0;
+	align-items: flex-start;
+	gap: 20px;
+}
+
+.body-left {
+	font-size: 16px;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.body-left p {
+	margin: 0 0 10px 0;
+}
+
+.body-right input {
+	display: block;
+	margin: 0 0 10px 0;
 }
 
 .body-left,
 .body-right {
-	padding: 20px;
+	padding: 10px;
+	flex: 1;
+	box-sizing: border-box;
+}
+
+.body-left p + p {
+	margin-top: 10px;
+}
+
+.body-left p {
+	font-size: 16px;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 input {
-	border: none;
+	border: 0;
 	border-bottom: grey;
 }
 
@@ -43,27 +86,27 @@ input {
 	gap: 10px;
 }
 
-.body-right input,
-.body-right textarea {
-	padding: 8px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	font-family: inherit;
+.body-right input {
+	border: none;
+	border-bottom: 1px solid grey;
+	padding: 0;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.body-right textarea {
-	min-height: 80px;
-	resize: vertical;
+.postcard-footer {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
 }
 
 .postcard-footer button {
-	text-align: center;
-	padding: 16px;
+	padding: 2px 4px;
 	background-color: grey;
-	color: white;
+	color: rgb(0, 0, 0);
+	text-align: center;
 	border: none;
-	padding: 10px 20px;
-	font-size: 1rem;
+	font-size: 14px;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 	border-radius: 6px;
 	cursor: pointer;
 	transition: background 0.3s ease;
@@ -72,3 +115,4 @@ input {
 .postcard-footer button:hover {
 	background-color: rgb(84, 83, 83);
 }
+
